@@ -243,11 +243,6 @@ ScrollTrigger.addEventListener('refreshInit',function(){gw.style.height=(innerHe
 gsap.to(track,{x:function(){return -dist()},ease:'none',scrollTrigger:{trigger:gw,start:'top top',end:'bottom bottom',scrub:.5,invalidateOnRefresh:true}});
 $$('.track .arch img').forEach(function(im){gsap.fromTo(im,{xPercent:-7},{xPercent:7,ease:'none',scrollTrigger:{trigger:gw,start:'top top',end:'bottom bottom',scrub:.5}})});
 
-var o={v:0,c:0};
-$('#rnum').textContent='0.0';$('#rcnt').textContent='0';
-ScrollTrigger.create({trigger:'.rate',start:'top 70%',once:true,onEnter:function(){
- gsap.to(o,{v:4.6,c:294,duration:2,ease:'power2.out',onUpdate:function(){$('#rnum').textContent=o.v.toFixed(1);$('#rcnt').textContent=Math.round(o.c)}});
-}});
 gsap.from('.rate .st,.rate p,.rate .btn',{y:30,opacity:0,stagger:.12,duration:.9,ease:'power3.out',scrollTrigger:{trigger:'.rate',start:'top 65%'}});
 
 gsap.from('.visit li',{y:30,opacity:0,stagger:.1,duration:.8,ease:'power3.out',scrollTrigger:{trigger:'.visit ul',start:'top 85%'}});
