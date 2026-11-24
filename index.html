@@ -51,9 +51,9 @@ nav .cta{font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:1px 
 .hero{height:100svh;min-height:600px;position:relative;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 50% 38%,#5a1226 0%,transparent 62%),radial-gradient(ellipse at 10% 100%,#3a0c1b 0%,transparent 55%),var(--bg)}
 .hero .stage{position:relative;width:100%;height:100%;display:grid;grid-template-rows:auto 1fr auto;justify-items:center;padding:calc(76px + env(safe-area-inset-top)) 22px 28px;text-align:center}
 .hero .eyebrow{margin:0}
-.h-arch{position:relative;align-self:center;width:min(64vw,36svh*.75,330px);aspect-ratio:3/4;border-radius:999px 999px 16px 16px;overflow:hidden;border:1px solid #d9b25f66;box-shadow:0 30px 80px #000a;will-change:transform}
+.h-arch{position:relative;align-self:center;width:min(72vw,38svh*.8,340px);aspect-ratio:4/5;border-radius:3px;overflow:hidden;box-shadow:0 30px 80px #000a;will-change:transform}
 .h-arch img{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;will-change:transform}
-.h-arch:after{content:"";position:absolute;inset:9px;border-radius:999px 999px 8px 8px;border:1px solid #d9b25f55;pointer-events:none}
+.h-arch:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--gold3),var(--gold2),var(--gold3))}
 .hero h1{font-size:clamp(40px,11.4vw,100px);position:relative;z-index:2;margin-top:-4svh;text-shadow:0 4px 30px #1c0710}
 .ln{display:block;overflow:hidden;padding-bottom:.08em}
 .ln>span{display:block}
@@ -72,31 +72,34 @@ nav .cta{font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:1px 
 .state p{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,8vw,76px);line-height:1.12;max-width:15em}
 .state .w{opacity:.16}
 
-.rv-pin{position:relative;height:100svh;overflow:hidden}
-.rv-pin .ph{position:absolute;inset:0;clip-path:inset(20% 26% 22% 26% round 999px 999px 0 0);will-change:clip-path}
+.rv-pin{position:relative;height:230svh}
+.rv-in{position:sticky;top:0;height:100svh;overflow:hidden}
+.rv-pin .ph{position:absolute;inset:0;clip-path:inset(16% 8% 30% 8% round 3px);will-change:clip-path}
 .rv-pin .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;transform:scale(1.25)}
 .rv-pin .ph:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,#1c0710dd)}
 .rv-pin .cap{position:absolute;left:0;right:0;bottom:0;padding:0 24px max(44px,env(safe-area-inset-bottom));z-index:3}
 .rv-pin .cap h2{font-size:clamp(36px,9vw,72px);max-width:11em}
 .rv-pin .cap p{margin-top:14px;max-width:28em;color:#f6efe0cc;font-size:15px}
 
-.colls{padding:clamp(70px,12vw,140px) 0 80px;position:relative}
+.colls{padding:clamp(70px,12vw,140px) 0 10px;position:relative}
 .colls .head{text-align:center;margin-bottom:34px;padding:0 20px}
 .colls .head h2{font-size:clamp(36px,9vw,64px)}
 .stack{max-width:620px;margin:0 auto;padding:0 18px}
 .sc{position:sticky;top:calc(84px + var(--i)*16px);margin-bottom:26px;min-height:min(46svh,330px);padding:28px 26px;border:1px solid #d9b25f55;border-radius:22px;background:linear-gradient(160deg,#3a0f20,#210a14);box-shadow:0 -10px 40px #0007;display:flex;flex-direction:column;justify-content:space-between;transform-origin:50% 0;overflow:hidden}
+.sc .dim{position:absolute;inset:0;background:#10040a;opacity:0;pointer-events:none;border-radius:inherit}
 .sc:before{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;border:1px solid #d9b25f26;box-shadow:0 0 0 24px #d9b25f0d,0 0 0 52px #d9b25f08}
 .sc i{font-style:normal;font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:16px;letter-spacing:.24em}
 .sc h3{font-size:clamp(40px,11vw,60px);margin:6px 0 10px}
 .sc p{font-size:15px;color:#f6efe0b8;max-width:24em}
 .sc .tag{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
 
-.hg{position:relative;height:100svh;overflow:hidden;background:var(--bg2);display:flex;flex-direction:column;justify-content:center}
+.hgw{position:relative;background:var(--bg2)}
+.hg{position:sticky;top:0;height:100svh;overflow:hidden;background:var(--bg2);display:flex;flex-direction:column;justify-content:center}
 .hg .head{padding:0 24px;margin-bottom:22px}
 .hg .head h2{font-size:clamp(34px,8.4vw,64px)}
 .track{display:flex;gap:18px;padding:0 24px;width:max-content;will-change:transform}
 .track figure{flex:none;width:min(66vw,300px)}
-.track .arch{aspect-ratio:3/4.1;border-radius:999px 999px 16px 16px;overflow:hidden;border:1px solid #d9b25f55;position:relative;box-shadow:0 20px 60px #0008}
+.track .arch{aspect-ratio:4/5;border-radius:3px;overflow:hidden;position:relative;box-shadow:0 20px 60px #0008}
 .track .arch img{position:absolute;inset:0 -12%;width:124%;height:100%;max-width:none;object-fit:cover;will-change:transform}
 .track figcaption{text-align:center;margin-top:12px;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--gold2)}
 .track figure:nth-child(even){margin-top:30px}
@@ -114,7 +117,7 @@ nav .cta{font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:1px 
 .visit li span{min-width:78px;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);padding-top:5px}
 .visit .acts{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
 .vgrid{display:grid;gap:44px}
-.v-arch{width:min(70vw,340px);aspect-ratio:3/4;border-radius:999px 999px 16px 16px;overflow:hidden;border:1px solid #d9b25f55;margin:0 auto;position:relative}
+.v-arch{width:min(84vw,380px);aspect-ratio:4/5;border-radius:3px;overflow:hidden;margin:0 auto;position:relative}
 .v-arch img{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover}
 @media(min-width:821px){.vgrid{grid-template-columns:1fr 1fr;align-items:center}}
 
@@ -151,8 +154,8 @@ footer .brand{justify-content:center;margin-bottom:12px}
 <section class="state"><div class="wrap"><div class="eyebrow">Shree Jewellers</div>
 <p id="statement">Exclusive gold, Polki and diamond jewellery. Bridal pieces, daily wear and designs made just for you.</p></div></section>
 
-<section class="rv-pin" id="rvpin"><div class="ph" id="rvph"><img src="img/showroom-counter.jpg" alt="Shree Jewellers team showing jewellery at the display counter" loading="lazy"></div>
-<div class="cap"><div class="eyebrow">The showroom</div><h2>Visit us on <span class="gt">Mahatma Gandhi Road.</span></h2><p>Civil Lines, Agra. Walk in and let the team show you pieces for your occasion.</p></div></section>
+<section class="rv-pin" id="rvpin"><div class="rv-in"><div class="ph" id="rvph"><img src="img/showroom-counter.jpg" alt="Shree Jewellers team showing jewellery at the display counter"></div>
+<div class="cap"><div class="eyebrow">The showroom</div><h2>Visit us on <span class="gt">Mahatma Gandhi Road.</span></h2><p>Civil Lines, Agra. Walk in and let the team show you pieces for your occasion.</p></div></div></section>
 
 <section class="colls" id="collections"><div class="head"><div class="eyebrow">Collections</div><h2>Made for every <span class="gt">occasion.</span></h2></div>
 <div class="stack" id="stack">
@@ -164,14 +167,14 @@ footer .brand{justify-content:center;margin-bottom:12px}
 <div class="sc" style="--i:5"><div><i>06</i><h3>Custom designs</h3><p>Have something in mind? Share it with the team and they will make it.</p></div><span class="tag">Ask in store</span></div>
 </div></section>
 
-<section class="hg" id="gallery"><div class="head"><div class="eyebrow">Gallery</div><h2>Moments from <span class="gt">Shree.</span></h2></div>
+<section class="hgw" id="gallery"><div class="hg"><div class="head"><div class="eyebrow">Gallery</div><h2>Moments from <span class="gt">Shree.</span></h2></div>
 <div class="track" id="track">
-<figure><div class="arch"><img src="img/storefront.jpg" alt="Shree Jewellers storefront lit up for the festive season" loading="lazy"></div><figcaption>Festive nights</figcaption></figure>
-<figure><div class="arch"><img src="img/festive-look.jpg" alt="Woman wearing a gold necklace and earrings lighting a diya" loading="lazy"></div><figcaption>Gold for Diwali</figcaption></figure>
-<figure><div class="arch"><img src="img/gold-necklace.jpg" alt="Gold temple necklace with ruby drops" loading="lazy"></div><figcaption>Temple necklace</figcaption></figure>
-<figure><div class="arch"><img src="img/showroom-counter.jpg" alt="Team at the display counter" loading="lazy"></div><figcaption>At the counter</figcaption></figure>
+<figure><div class="arch"><img src="img/storefront.jpg" alt="Shree Jewellers storefront lit up for the festive season"></div><figcaption>Festive nights</figcaption></figure>
+<figure><div class="arch"><img src="img/festive-look.jpg" alt="Woman wearing a gold necklace and earrings lighting a diya"></div><figcaption>Gold for Diwali</figcaption></figure>
+<figure><div class="arch"><img src="img/gold-necklace.jpg" alt="Gold temple necklace with ruby drops"></div><figcaption>Temple necklace</figcaption></figure>
+<figure><div class="arch"><img src="img/showroom-counter.jpg" alt="Team at the display counter"></div><figcaption>At the counter</figcaption></figure>
 </div>
-<div class="more"><a class="btn" target="_blank" rel="noopener" href="https://www.instagram.com/shreejewellersagra/">More on Instagram</a></div></section>
+<div class="more"><a class="btn" target="_blank" rel="noopener" href="https://www.instagram.com/shreejewellersagra/">More on Instagram</a></div></div></section>
 
 <section class="rate" id="reviews"><div class="wrap"><div class="eyebrow">Google rating</div>
 <div class="big"><span id="rnum">4.6</span></div><div class="st" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
@@ -187,7 +190,7 @@ footer .brand{justify-content:center;margin-bottom:12px}
 <li><span>Follow</span><div><a target="_blank" rel="noopener" href="https://www.instagram.com/shreejewellersagra/">@shreejewellersagra</a></div></li>
 </ul>
 <div class="acts"><a class="btn gold" target="_blank" rel="noopener" href="https://maps.app.goo.gl/mCjeYqmPDRYmfXow5">Get directions</a><a class="btn" href="tel:+919412254207">Call now</a></div></div>
-<div class="v-arch"><img src="img/storefront.jpg" alt="Shree Jewellers storefront" loading="lazy"></div>
+<div class="v-arch"><img src="img/storefront.jpg" alt="Shree Jewellers storefront"></div>
 </div></section>
 
 <footer><div class="brand"><img src="img/crest.jpg" alt="" width="40" height="40"><span><b>SHREE</b><small>JEWELLERS</small></span></div>
@@ -224,20 +227,21 @@ ScrollTrigger.create({start:0,end:'max',onUpdate:function(s){mt.timeScale(1+Math
 var h=gsap.timeline({scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:.6}});
 h.to('#hArch',{scale:1.18,yPercent:-6,ease:'none'},0).to('#hArch img',{yPercent:10,ease:'none'},0).to('.hero .tx',{yPercent:-26,opacity:.15,ease:'none'},0).to('.hero .eyebrow',{opacity:0,ease:'none'},0);
 
-var rv=gsap.timeline({scrollTrigger:{trigger:'#rvpin',start:'top top',end:'+=110%',scrub:.7,pin:true,anticipatePin:1}});
-rv.to('#rvph',{clipPath:'inset(0% 0% 0% 0% round 0px 0px 0px 0px)',ease:'power2.inOut',duration:1},0).to('#rvph img',{scale:1,ease:'none',duration:1},0).from('#rvpin .cap',{opacity:0,y:60,duration:.6,ease:'power2.out'},.55);
+var rv=gsap.timeline({scrollTrigger:{trigger:'#rvpin',start:'top top',end:'bottom bottom',scrub:.6}});
+rv.to('#rvph',{clipPath:'inset(0% 0% 0% 0% round 0px)',ease:'none',duration:1},0).to('#rvph img',{scale:1,ease:'none',duration:1},0).from('#rvpin .cap',{opacity:0,y:50,duration:.35,ease:'none'},.6);
 
 var cards=$$('.sc');
 cards.forEach(function(c,i){
  var nx=cards[i+1];
- if(nx)gsap.to(c,{scale:.93,filter:'brightness(.55)',ease:'none',scrollTrigger:{trigger:nx,start:'top 80%',end:'top 20%',scrub:true}});
+ if(nx){var d=document.createElement('div');d.className='dim';c.appendChild(d);gsap.to(c,{scale:.94,ease:'none',scrollTrigger:{trigger:nx,start:'top 80%',end:'top 20%',scrub:true}});gsap.to(d,{opacity:.5,ease:'none',scrollTrigger:{trigger:nx,start:'top 80%',end:'top 20%',scrub:true}})}
 });
 gsap.from('.colls .head',{y:40,opacity:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:'.colls .head',start:'top 88%'}});
 
-var track=$('#track');
-function dist(){return track.scrollWidth-innerWidth+24}
-gsap.to(track,{x:function(){return -dist()},ease:'none',scrollTrigger:{trigger:'#gallery',start:'top top',end:function(){return '+='+dist()*1.1},pin:true,scrub:.7,invalidateOnRefresh:true,anticipatePin:1}});
-$$('.track .arch img').forEach(function(im){gsap.fromTo(im,{xPercent:-7},{xPercent:7,ease:'none',scrollTrigger:{trigger:'#gallery',start:'top top',end:function(){return '+='+dist()*1.1},scrub:.7,invalidateOnRefresh:true}})});
+var track=$('#track'),gw=$('#gallery');
+function dist(){return Math.max(0,track.scrollWidth-innerWidth+24)}
+ScrollTrigger.addEventListener('refreshInit',function(){gw.style.height=(innerHeight+dist()*1.1)+'px'});
+gsap.to(track,{x:function(){return -dist()},ease:'none',scrollTrigger:{trigger:gw,start:'top top',end:'bottom bottom',scrub:.5,invalidateOnRefresh:true}});
+$$('.track .arch img').forEach(function(im){gsap.fromTo(im,{xPercent:-7},{xPercent:7,ease:'none',scrollTrigger:{trigger:gw,start:'top top',end:'bottom bottom',scrub:.5}})});
 
 var o={v:0,c:0};
 $('#rnum').textContent='0.0';$('#rcnt').textContent='0';
