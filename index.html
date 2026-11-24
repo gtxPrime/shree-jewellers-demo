@@ -14,7 +14,7 @@
 html{-webkit-text-size-adjust:100%;overflow-x:clip}
 html.lenis,html.lenis body{height:auto}
 .lenis.lenis-smooth{scroll-behavior:auto!important}
-body{background:var(--bg);color:var(--ivory);font-family:'Inter',system-ui,sans-serif;font-weight:300;line-height:1.6;overflow-x:clip}
+body{position:relative;background:var(--bg);color:var(--ivory);font-family:'Inter',system-ui,sans-serif;font-weight:300;line-height:1.6;overflow-x:clip}
 body.lock{overflow:hidden}
 img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
 h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;line-height:1.05}
@@ -34,6 +34,7 @@ h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;l
 #loader .bar{width:150px;height:1px;background:#ffffff22;margin:18px auto 0;overflow:hidden}
 #loader .bar i{display:block;height:100%;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left}
 
+#path{position:absolute;left:0;top:0;z-index:60;pointer-events:none;overflow:visible}
 #thread{position:fixed;left:0;top:0;bottom:0;width:2px;z-index:70;background:#d9b25f1f}
 #thread i{display:block;width:100%;height:100%;background:linear-gradient(var(--gold2),var(--gold3));transform:scaleY(0);transform-origin:top}
 
@@ -51,9 +52,9 @@ nav .cta{font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:1px 
 .hero{height:100svh;min-height:600px;position:relative;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 50% 38%,#5a1226 0%,transparent 62%),radial-gradient(ellipse at 10% 100%,#3a0c1b 0%,transparent 55%),var(--bg)}
 .hero .stage{position:relative;width:100%;height:100%;display:grid;grid-template-rows:auto 1fr auto;justify-items:center;padding:calc(76px + env(safe-area-inset-top)) 22px 28px;text-align:center}
 .hero .eyebrow{margin:0}
-.h-arch{position:relative;align-self:center;width:min(72vw,38svh*.8,340px);aspect-ratio:4/5;border-radius:3px;overflow:hidden;box-shadow:0 30px 80px #000a;will-change:transform}
+.h-arch{position:relative;align-self:center;width:min(80vw,40svh*.9,380px);aspect-ratio:1/1.12;clip-path:url(#bl2);overflow:hidden;will-change:transform}
 .h-arch img{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;will-change:transform}
-.h-arch:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--gold3),var(--gold2),var(--gold3))}
+.h-arch:after{display:none}
 .hero h1{font-size:clamp(40px,11.4vw,100px);position:relative;z-index:2;margin-top:-4svh;text-shadow:0 4px 30px #1c0710}
 .ln{display:block;overflow:hidden;padding-bottom:.08em}
 .ln>span{display:block}
@@ -74,7 +75,7 @@ nav .cta{font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:1px 
 
 .rv-pin{position:relative;height:230svh}
 .rv-in{position:sticky;top:0;height:100svh;overflow:hidden}
-.rv-pin .ph{position:absolute;inset:0;clip-path:inset(16% 8% 30% 8% round 3px);will-change:clip-path}
+.rv-pin .ph{position:absolute;inset:0;clip-path:url(#bl4);will-change:clip-path}
 .rv-pin .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;transform:scale(1.25)}
 .rv-pin .ph:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,#1c0710dd)}
 .rv-pin .cap{position:absolute;left:0;right:0;bottom:0;padding:0 24px max(44px,env(safe-area-inset-bottom));z-index:3}
@@ -97,9 +98,10 @@ nav .cta{font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:1px 
 .hg{position:sticky;top:0;height:100svh;overflow:hidden;background:var(--bg2);display:flex;flex-direction:column;justify-content:center}
 .hg .head{padding:0 24px;margin-bottom:22px}
 .hg .head h2{font-size:clamp(34px,8.4vw,64px)}
-.track{display:flex;gap:18px;padding:0 24px;width:max-content;will-change:transform}
-.track figure{flex:none;width:min(66vw,300px)}
-.track .arch{aspect-ratio:4/5;border-radius:3px;overflow:hidden;position:relative;box-shadow:0 20px 60px #0008}
+.track{display:flex;gap:2px;padding:0 24px;width:max-content;will-change:transform}
+.track figure{flex:none;width:min(74vw,330px)}
+.track .arch{aspect-ratio:1/1.1;overflow:hidden;position:relative}
+.track figure:nth-child(1) .arch{clip-path:url(#bl1)}.track figure:nth-child(2) .arch{clip-path:url(#bl2)}.track figure:nth-child(3) .arch{clip-path:url(#bl3)}.track figure:nth-child(4) .arch{clip-path:url(#bl4)}
 .track .arch img{position:absolute;inset:0 -12%;width:124%;height:100%;max-width:none;object-fit:cover;will-change:transform}
 .track figcaption{text-align:center;margin-top:12px;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--gold2)}
 .track figure:nth-child(even){margin-top:30px}
@@ -117,7 +119,7 @@ nav .cta{font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:1px 
 .visit li span{min-width:78px;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);padding-top:5px}
 .visit .acts{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
 .vgrid{display:grid;gap:44px}
-.v-arch{width:min(84vw,380px);aspect-ratio:4/5;border-radius:3px;overflow:hidden;margin:0 auto;position:relative}
+.v-arch{width:min(88vw,400px);aspect-ratio:1/1.1;clip-path:url(#bl3);overflow:hidden;margin:0 auto;position:relative}
 .v-arch img{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover}
 @media(min-width:821px){.vgrid{grid-template-columns:1fr 1fr;align-items:center}}
 
@@ -131,6 +133,11 @@ footer .brand{justify-content:center;margin-bottom:12px}
 @media(prefers-reduced-motion:reduce){#loader{display:none}.cue i{animation:none}}
 </style></head>
 <body class="lock">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><clipPath id="bl1" clipPathUnits="objectBoundingBox"><path d="M0.52,0.01 C0.80,-0.01 1.0,0.22 0.97,0.50 C0.95,0.80 0.78,1.0 0.48,0.99 C0.18,0.98 0.00,0.78 0.03,0.46 C0.05,0.20 0.26,0.03 0.52,0.01Z"/></clipPath>
+<clipPath id="bl2" clipPathUnits="objectBoundingBox"><path d="M0.5,0 C0.85,0 0.99,0.25 0.86,0.45 C0.76,0.6 0.99,0.8 0.8,0.95 C0.6,1.05 0.3,1 0.15,0.85 C0.0,0.7 0.12,0.5 0.05,0.35 C0.0,0.15 0.2,0 0.5,0Z"/></clipPath>
+<clipPath id="bl3" clipPathUnits="objectBoundingBox"><path d="M0.6,0 C0.88,0.04 1.0,0.3 0.94,0.55 C0.9,0.75 1.0,0.9 0.75,0.98 C0.5,1.04 0.3,0.92 0.12,0.9 C-0.02,0.85 0.0,0.6 0.06,0.4 C0.1,0.14 0.34,-0.04 0.6,0Z"/></clipPath>
+<clipPath id="bl4" clipPathUnits="objectBoundingBox"><path d="M0.3,0.02 C0.5,-0.03 0.62,0.08 0.8,0.04 C1.0,0.0 1.03,0.3 0.96,0.5 C0.9,0.7 1.0,0.9 0.78,0.97 C0.55,1.05 0.4,0.93 0.22,0.97 C0.0,1.0 0.0,0.75 0.05,0.55 C0.1,0.35 -0.04,0.12 0.3,0.02Z"/></clipPath></defs></svg>
+<svg id="path" aria-hidden="true"><path id="pbg" fill="none" stroke="#d9b25f" stroke-opacity=".12" stroke-width="1"/><path id="pfg" fill="none" stroke="url(#pg)" stroke-width="1.6" stroke-linecap="round"/><defs><linearGradient id="pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2d896"/><stop offset="1" stop-color="#d9b25f"/></linearGradient></defs><circle id="pdot" r="5" fill="#f2d896"/><circle id="pdot2" r="11" fill="none" stroke="#f2d896" stroke-opacity=".4"/></svg>
 <div id="grain"></div>
 <div id="loader"><div><img src="img/crest.jpg" alt="" width="92" height="92"><p>Shree Jewellers</p><div class="bar"><i></i></div></div></div>
 <div id="thread"><i></i></div>
@@ -228,8 +235,21 @@ var h=gsap.timeline({scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom 
 h.to('#hArch',{scale:1.18,yPercent:-6,ease:'none'},0).to('#hArch img',{yPercent:10,ease:'none'},0).to('.hero .tx',{yPercent:-26,opacity:.15,ease:'none'},0).to('.hero .eyebrow',{opacity:0,ease:'none'},0);
 
 var rv=gsap.timeline({scrollTrigger:{trigger:'#rvpin',start:'top top',end:'bottom bottom',scrub:.6}});
-rv.to('#rvph',{clipPath:'inset(0% 0% 0% 0% round 0px)',ease:'none',duration:1},0).to('#rvph img',{scale:1,ease:'none',duration:1},0).from('#rvpin .cap',{opacity:0,y:50,duration:.35,ease:'none'},.6);
+rv.fromTo('#rvph',{scale:.7},{scale:1.08,ease:'none',duration:1},0).to('#rvph img',{scale:1,ease:'none',duration:1},0).from('#rvpin .cap',{opacity:0,y:50,duration:.35,ease:'none'},.6);
 
+var P=$('#pfg'),PB=$('#pbg'),D1=$('#pdot'),D2=$('#pdot2'),PS=$('#path'),plen=1,pp=0;
+function place(){var pt=P.getPointAtLength(plen*pp);D1.setAttribute('cx',pt.x);D1.setAttribute('cy',pt.y);D2.setAttribute('cx',pt.x);D2.setAttribute('cy',pt.y)}
+function buildPath(){
+ PS.style.height='0px';var W=document.documentElement.clientWidth,Hh=document.documentElement.scrollHeight;
+ PS.setAttribute('width',W);PS.setAttribute('height',Hh);PS.style.height=Hh+'px';
+ var xs=[.84,.14,.86,.12,.88,.14,.84,.16],d='M '+(W*.5)+' 70',y=70,seg=Math.max(700,Hh/9),i=0;
+ while(y<Hh-120){var x=W*xs[i%xs.length],y2=Math.min(Hh-60,y+seg);
+  d+=' C '+(W*(i%2?.9:.1))+' '+(y+seg*.35)+', '+(W*(i%2?.1:.9))+' '+(y+seg*.65)+', '+x+' '+y2;y=y2;i++}
+ P.setAttribute('d',d);PB.setAttribute('d',d);plen=P.getTotalLength();
+ P.style.strokeDasharray=plen;P.style.strokeDashoffset=plen*(1-pp);place();
+}
+ScrollTrigger.addEventListener('refresh',buildPath);
+ScrollTrigger.create({start:0,end:'max',onUpdate:function(s){pp=s.progress;P.style.strokeDashoffset=plen*(1-pp);place()}});
 var cards=$$('.sc');
 cards.forEach(function(c,i){
  var nx=cards[i+1];
