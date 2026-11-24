@@ -34,7 +34,10 @@ h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;l
 #loader .bar{width:150px;height:1px;background:#ffffff22;margin:18px auto 0;overflow:hidden}
 #loader .bar i{display:block;height:100%;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left}
 
-#path{position:absolute;left:0;top:0;z-index:60;pointer-events:none;overflow:visible}
+#path,#pdots{position:absolute;left:0;top:0;pointer-events:none;overflow:visible}
+#path{z-index:0}#pdots{z-index:60}
+main,section,header.hero,.marq,footer{position:relative;z-index:1}
+.hgw,.hg,.visit{background:transparent}
 #thread{position:fixed;left:0;top:0;bottom:0;width:2px;z-index:70;background:#d9b25f1f}
 #thread i{display:block;width:100%;height:100%;background:linear-gradient(var(--gold2),var(--gold3));transform:scaleY(0);transform-origin:top}
 
@@ -49,7 +52,7 @@ nav .cta{font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:1px 
 @media(max-width:820px){nav .links{display:none}}
 @media(min-width:821px){nav .cta{display:none}}
 
-.hero{height:100svh;min-height:600px;position:relative;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 50% 38%,#5a1226 0%,transparent 62%),radial-gradient(ellipse at 10% 100%,#3a0c1b 0%,transparent 55%),var(--bg)}
+.hero{height:100svh;min-height:600px;position:relative;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 50% 38%,#5a1226 0%,transparent 62%),radial-gradient(ellipse at 10% 100%,#3a0c1b 0%,transparent 55%)}
 .hero .stage{position:relative;width:100%;height:100%;display:grid;grid-template-rows:auto 1fr auto;justify-items:center;padding:calc(76px + env(safe-area-inset-top)) 22px 28px;text-align:center}
 .hero .eyebrow{margin:0}
 .h-arch{position:relative;align-self:center;width:min(80vw,40svh*.9,380px);aspect-ratio:1/1.12;clip-path:url(#bl2);overflow:hidden;will-change:transform}
@@ -65,7 +68,7 @@ nav .cta{font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:1px 
 @media(min-width:821px){.hero .stage{grid-template-rows:auto auto;grid-template-columns:1.1fr .9fr;text-align:left;justify-items:start;align-content:center;column-gap:60px;padding:100px clamp(30px,6vw,90px) 40px;max-width:1300px;margin:auto}
 .hero .eyebrow{grid-column:1;grid-row:1;align-self:end;margin-bottom:18px}.hero .tx{grid-column:1;grid-row:2;align-self:start}.h-arch{grid-column:2;grid-row:1/span 2;width:min(34vw,400px);justify-self:end}.hero h1{margin-top:0}.cue{display:none}}
 
-.marq{overflow:hidden;border-block:1px solid #d9b25f33;padding:18px 0;background:#150509}
+.marq{overflow:hidden;border-block:1px solid #d9b25f33;padding:18px 0;background:#15050980}
 .marq div{display:flex;gap:44px;white-space:nowrap;width:max-content;font-family:'Cormorant Garamond',serif;font-size:clamp(26px,6vw,44px);font-style:italic;color:var(--gold2)}
 .marq span:nth-child(even){color:var(--gold3);font-style:normal;font-size:.5em;align-self:center}
 
@@ -137,7 +140,7 @@ footer .brand{justify-content:center;margin-bottom:12px}
 <clipPath id="bl2" clipPathUnits="objectBoundingBox"><path d="M0.5,0 C0.85,0 0.99,0.25 0.86,0.45 C0.76,0.6 0.99,0.8 0.8,0.95 C0.6,1.05 0.3,1 0.15,0.85 C0.0,0.7 0.12,0.5 0.05,0.35 C0.0,0.15 0.2,0 0.5,0Z"/></clipPath>
 <clipPath id="bl3" clipPathUnits="objectBoundingBox"><path d="M0.6,0 C0.88,0.04 1.0,0.3 0.94,0.55 C0.9,0.75 1.0,0.9 0.75,0.98 C0.5,1.04 0.3,0.92 0.12,0.9 C-0.02,0.85 0.0,0.6 0.06,0.4 C0.1,0.14 0.34,-0.04 0.6,0Z"/></clipPath>
 <clipPath id="bl4" clipPathUnits="objectBoundingBox"><path d="M0.3,0.02 C0.5,-0.03 0.62,0.08 0.8,0.04 C1.0,0.0 1.03,0.3 0.96,0.5 C0.9,0.7 1.0,0.9 0.78,0.97 C0.55,1.05 0.4,0.93 0.22,0.97 C0.0,1.0 0.0,0.75 0.05,0.55 C0.1,0.35 -0.04,0.12 0.3,0.02Z"/></clipPath></defs></svg>
-<svg id="path" aria-hidden="true"><path id="pbg" fill="none" stroke="#d9b25f" stroke-opacity=".12" stroke-width="1"/><path id="pfg" fill="none" stroke="url(#pg)" stroke-width="1.6" stroke-linecap="round"/><defs><linearGradient id="pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2d896"/><stop offset="1" stop-color="#d9b25f"/></linearGradient></defs><circle id="pdot" r="5" fill="#f2d896"/><circle id="pdot2" r="11" fill="none" stroke="#f2d896" stroke-opacity=".4"/></svg>
+<svg id="path" aria-hidden="true"><path id="pbg" fill="none" stroke="#d9b25f" stroke-opacity=".12" stroke-width="1"/><path id="pfg" fill="none" stroke="url(#pg)" stroke-width="1.6" stroke-linecap="round"/><defs><linearGradient id="pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2d896"/><stop offset="1" stop-color="#d9b25f"/></linearGradient></defs></svg><svg id="pdots" aria-hidden="true"><circle id="pdot" r="5" fill="#f2d896"/><circle id="pdot2" r="11" fill="none" stroke="#f2d896" stroke-opacity=".4"/></svg>
 <div id="grain"></div>
 <div id="loader"><div><img src="img/crest.jpg" alt="" width="92" height="92"><p>Shree Jewellers</p><div class="bar"><i></i></div></div></div>
 <div id="thread"><i></i></div>
@@ -240,11 +243,11 @@ rv.fromTo('#rvph',{scale:.7},{scale:1.08,ease:'none',duration:1},0).to('#rvph im
 var P=$('#pfg'),PB=$('#pbg'),D1=$('#pdot'),D2=$('#pdot2'),PS=$('#path'),plen=1,pp=0;
 function place(){var pt=P.getPointAtLength(plen*pp);D1.setAttribute('cx',pt.x);D1.setAttribute('cy',pt.y);D2.setAttribute('cx',pt.x);D2.setAttribute('cy',pt.y)}
 function buildPath(){
- PS.style.height='0px';var W=document.documentElement.clientWidth,Hh=document.documentElement.scrollHeight;
- PS.setAttribute('width',W);PS.setAttribute('height',Hh);PS.style.height=Hh+'px';
- var xs=[.84,.14,.86,.12,.88,.14,.84,.16],d='M '+(W*.5)+' 70',y=70,seg=Math.max(700,Hh/9),i=0;
+ PS.style.height='0px';$('#pdots').style.height='0px';var W=document.documentElement.clientWidth,Hh=document.documentElement.scrollHeight;
+ [PS,$('#pdots')].forEach(function(e){e.setAttribute('width',W);e.setAttribute('height',Hh);e.style.height=Hh+'px'});
+ var xs=[.95,.985,.945,.98,.95,.985,.94,.98],d='M '+(W*.97)+' 70',y=70,seg=Math.max(260,Hh/26),i=0;
  while(y<Hh-120){var x=W*xs[i%xs.length],y2=Math.min(Hh-60,y+seg);
-  d+=' C '+(W*(i%2?.9:.1))+' '+(y+seg*.35)+', '+(W*(i%2?.1:.9))+' '+(y+seg*.65)+', '+x+' '+y2;y=y2;i++}
+  d+=' C '+(W*(i%2?.99:.94))+' '+(y+seg*.3)+', '+(W*(i%2?.94:.99))+' '+(y+seg*.7)+', '+x+' '+y2;y=y2;i++}
  P.setAttribute('d',d);PB.setAttribute('d',d);plen=P.getTotalLength();
  P.style.strokeDasharray=plen;P.style.strokeDashoffset=plen*(1-pp);place();
 }
